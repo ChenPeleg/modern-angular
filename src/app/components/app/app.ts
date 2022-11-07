@@ -15,19 +15,20 @@ import {RuntimeException} from "../../emulation/runtime-exception";
 })
 export class AppComponent implements AfterViewInit
 {
-    @ViewChild(AsmEditorComponent) asmEditor: AsmEditorComponent;
-    @ViewChild(ConsoleComponent) console: ConsoleComponent;
+    @ViewChild(AsmEditorComponent) asmEditor: AsmEditorComponent | undefined;
+    @ViewChild(ConsoleComponent) console: ConsoleComponent | undefined;
 
     private runtime: Runtime = new Runtime();
     private assembler: Assembler = new Assembler();
-    private cpu: CPU;
+    private cpu: CPU | undefined;
 
     private memorySize: number = 256;
     private compileErrors: string = "";
 
     ngAfterViewInit()
     {
-        this.asmEditor.text =
+        // @ts-ignore
+      this.asmEditor.text =
 `section .data
 hello:
     db 'Hello world!', 10, 0
@@ -42,21 +43,21 @@ section .text
 
 factorial:
     ENTER
-    
+
     CMP [EBP + 8], 1
     JNE .recurse
     MOV EAX, 1
     JMP .end
-    
+
 .recurse:
     MOV EAX, [EBP + 8]
     DEC EAX
 
     PUSH EAX
     CALL factorial
-    
+
     IMUL [EBP + 8]
-    
+
 .end:
     LEAVE
     RET
@@ -73,7 +74,8 @@ factorial:
             this.cpu = new CPU(program, memory);
             this.cpu.onInterrupt.subscribe((interrupt: Interrupt) => this.handleInterrupt(interrupt));
             this.cpu.onError.subscribe((runtimeException: RuntimeException) => alert(runtimeException.message));
-            this.cpu.breakpoints = this.asmEditor.breakpoints;
+            // @ts-ignore
+          this.cpu.breakpoints = this.asmEditor.breakpoints;
             this.runtime.process = new Process(this.cpu);
 
             this.compileErrors = "";
@@ -98,15 +100,18 @@ factorial:
             switch (interrupt)
             {
                 case Interrupt.WRITE_NUM:
-                    this.print(this.cpu.getRegisterByName("EAX").getValue().toString());
+                  // @ts-ignore
+                  this.print(this.cpu.getRegisterByName("EAX").getValue().toString());
                     break;
                 case Interrupt.WRITE_STRING:
                 {
                     let data: string = "";
-                    let start: number = this.cpu.getRegisterByName("EAX").getValue();
+                    // @ts-ignore
+                  let start: number = this.cpu.getRegisterByName("EAX").getValue();
                     while (true)
                     {
-                        let char = this.cpu.derefAddress(start, 1).getValue();
+                        // @ts-ignore
+                      let char = this.cpu.derefAddress(start, 1).getValue();
                         if (char === 0)
                         {
                             break;
@@ -125,14 +130,17 @@ factorial:
         }
         catch (e)
         {
-            this.cpu.pause();
-            alert(e.message);
+            // @ts-ignore
+          this.cpu.pause();
+            // @ts-ignore
+          alert(e.message);
         }
     }
 
     private print(value: string)
     {
-        this.console.print(value);
+        // @ts-ignore
+      this.console.print(value);
     }
 
     private onBreakpointChanged(breakpoints: number[])
@@ -143,7 +151,7 @@ factorial:
         }
     }
 
-    private getActiveLine(): number
+    private getActiveLine(): number | null
     {
         if (this.runtime.hasProcess() && this.runtime.process.isStarted())
         {

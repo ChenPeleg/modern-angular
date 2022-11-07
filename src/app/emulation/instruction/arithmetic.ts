@@ -12,7 +12,7 @@ export class Add extends BinaryOperation
 }
 export class AddWithCarry extends Add
 {
-    execute(cpu: CPU): number
+  override execute(cpu: CPU): number
     {
         this.target.setValue(cpu.alu.add(this.target.getValue(), this.source.getValue(), cpu.statusWord.carry ? 1 : 0));
         return cpu.getNextInstruction();

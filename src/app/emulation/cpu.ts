@@ -90,7 +90,7 @@ export class CPU
     private _onExit: EventEmitter<CPU> = new EventEmitter<CPU>();
     private _onError: EventEmitter<RuntimeException> = new EventEmitter<RuntimeException>();
     private _running: boolean = false;
-    private _breakpoints: number[];
+    private _breakpoints: number[] | undefined;
     private stoppedOnBreakpoint: boolean = false;
     private scheduleTimeout: any = null;
 
@@ -270,12 +270,14 @@ export class CPU
 
         return this.memory.load(address, size);
     }
-    calculateEffectiveAddressFromRegister(baseReg: MemoryView, indexReg: MemoryView = null,
+    // @ts-ignore
+  calculateEffectiveAddressFromRegister(baseReg: MemoryView, indexReg: MemoryView = null,
                               multiplier: number = 1, constant: number = 0): number
     {
         return this.calculateEffectiveAddress(baseReg.getValue(), indexReg, multiplier, constant);
     }
-    calculateEffectiveAddress(address: number, indexReg: MemoryView = null,
+    // @ts-ignore
+  calculateEffectiveAddress(address: number, indexReg: MemoryView = null,
                               multiplier: number = 1, constant: number = 0): number
     {
         if (indexReg === null)
@@ -304,7 +306,8 @@ export class CPU
     }
     getRegisterByIndex(index: number): MemoryView
     {
-        return this.getRegisterByName(_.findKey(REGISTER_INDEX, (reg: RegisterInfo) => reg.id === index));
+        // @ts-ignore
+      return this.getRegisterByName(_.findKey(REGISTER_INDEX, (reg: RegisterInfo) => reg.id === index));
     }
 
     private hasBreakpoint(): boolean
@@ -323,7 +326,8 @@ export class CPU
         }
         catch (e)
         {
-            this.onError.emit(e);
+            // @ts-ignore
+          this.onError.emit(e);
             this.pause();
         }
     }

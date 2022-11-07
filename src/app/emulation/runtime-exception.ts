@@ -1,6 +1,6 @@
 export class RuntimeException extends Error
 {
-    constructor(public message: string = "")
+    constructor(public override message: string = "")
     {
         super(message);
         Object.setPrototypeOf(this, RuntimeException.prototype);

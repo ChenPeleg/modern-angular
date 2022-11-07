@@ -2,7 +2,8 @@ import {Process} from "./process";
 
 export class Runtime
 {
-    private _process: Process = null;
+    // @ts-ignore
+  private _process: Process = null;
 
     get process(): Process
     {

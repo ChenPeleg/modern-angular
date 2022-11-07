@@ -30,17 +30,21 @@ export class MemoryView
 
         this.view = new DataView(this.memory.data, index);
         let signedIndex: number = signed ? 1 : 0;
-        this.getMethod = GET_METHODS[byteSize.toString()][signedIndex];
-        this.setMethod = SET_METHODS[byteSize.toString()][signedIndex];
+        // @ts-ignore
+      this.getMethod = GET_METHODS[byteSize.toString()][signedIndex];
+        // @ts-ignore
+      this.setMethod = SET_METHODS[byteSize.toString()][signedIndex];
     }
 
     setValue(value: number)
     {
-        this.view[this.setMethod](0, value, true);
+        // @ts-ignore
+      this.view[this.setMethod](0, value, true);
     }
     getValue(): number
     {
-        return this.view[this.getMethod](0, true);
+        // @ts-ignore
+      return this.view[this.getMethod](0, true);
     }
     add(value: number)
     {
@@ -73,7 +77,7 @@ export class NumericConstant extends MemoryView
         super.setValue(value);
     }
 
-    setValue(value: number)
+  override setValue(value: number)
     {
         throw new Error("Numeric constant's value cannot be changed");
     }
