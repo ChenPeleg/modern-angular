@@ -10,7 +10,7 @@ import {ConsoleComponent} from "../console/console";
 import {RuntimeException} from "../../emulation/runtime-exception";
 
 @Component({
-    selector: "app",
+    selector: "app-root",
     templateUrl: "app.html"
 })
 export class AppComponent implements AfterViewInit
