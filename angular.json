@@ -17,6 +17,11 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+
+              "customWebpackConfig": {
+
+                "path": "./extra-webpack.config.js"
+              },
             "outputPath": "dist/modern-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -67,18 +72,15 @@
         },
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
+
+
           "configurations": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "mergeRules": {
-                "externals": "replace"
-              }
-            },
             "production": {
               "browserTarget": "modern-angular:build:production"
             },
             "development": {
               "browserTarget": "modern-angular:build:development"
+
             }
           },
           "defaultConfiguration": "development"
