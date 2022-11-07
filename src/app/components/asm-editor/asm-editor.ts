@@ -9,7 +9,8 @@ import 'brace/ext/language_tools';
 
 @Component({
     selector: "asm-editor",
-    templateUrl: "./asm-editor.html"
+    templateUrl: "./asm-editor.html",
+  styleUrls :  ["./asm-editor.scss"]
 })
 export class AsmEditorComponent implements AfterViewInit
 {
