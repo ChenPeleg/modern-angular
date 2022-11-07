@@ -50,9 +50,10 @@ export abstract class Instruction
 
 export abstract class UnaryOperation extends Instruction
 {
-    protected target: MemoryView;
+    // @ts-ignore
+  protected target: MemoryView;
 
-    loadParameters(target: MemoryView)
+  override loadParameters(target: MemoryView)
     {
         this.target = target;
     }
@@ -60,14 +61,14 @@ export abstract class UnaryOperation extends Instruction
 
 export abstract class UnaryReadOperation extends UnaryOperation
 {
-    get validParameters(): string[][]
+  override get validParameters(): string[][]
     {
         return Instruction.UNARY_READ_PARAMS;
     }
 }
 export abstract class UnaryWriteOperation extends UnaryOperation
 {
-    get validParameters(): string[][]
+  override get validParameters(): string[][]
     {
         return Instruction.UNARY_WRITE_PARAMS;
     }
@@ -75,15 +76,17 @@ export abstract class UnaryWriteOperation extends UnaryOperation
 
 export abstract class BinaryOperation extends Instruction
 {
-    protected target: MemoryView;
-    protected source: MemoryView;
+    // @ts-ignore
+  protected target: MemoryView ;
+    // @ts-ignore
+  protected source: MemoryView  ;
 
-    get validParameters(): string[][]
+  override get validParameters(): string[][]
     {
         return Instruction.BINARY_WRITE_READ_PARAMS;
     }
 
-    loadParameters(target: MemoryView, source: MemoryView)
+  override loadParameters(target: MemoryView, source: MemoryView)
     {
         this.target = target;
         this.source = source;

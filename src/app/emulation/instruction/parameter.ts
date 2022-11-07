@@ -94,7 +94,7 @@ export class DerefLabelParameter extends LabelParameter
         super(size, label);
     }
 
-    fetchData(cpu: CPU): MemoryView
+  override fetchData(cpu: CPU): MemoryView
     {
         let indexReg: MemoryView = cpu.getRegisterByIndex(this.indexer.indexReg);
         return cpu.derefAddress(cpu.calculateEffectiveAddress(this.value, indexReg, this.indexer.multiplier, this.indexer.constant), this.size);

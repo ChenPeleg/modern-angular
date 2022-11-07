@@ -10,7 +10,8 @@ export class MemoryComponent
 {
     private _ascii: boolean = false;
 
-    @Input() memory: MemoryBlock = null;
+    // @ts-ignore
+  @Input() memory: MemoryBlock = null;
     @Input() wordSize: number = 1;
     @Input() width: number = 10;
 

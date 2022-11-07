@@ -13,7 +13,8 @@ class Label
 export class LabelResolver
 {
     private labels: any = {};
-    private lastGlobalLabel: Label = null;
+    // @ts-ignore
+  private lastGlobalLabel: Label = null;
     private unresolvedParameters: { labelParameter: LabelParameter, line: number }[] = [];
 
     addLabel(address: number, label: string, local: boolean = false)

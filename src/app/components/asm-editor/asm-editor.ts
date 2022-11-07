@@ -15,11 +15,13 @@ export class AsmEditorComponent implements AfterViewInit
     @Output() compile: EventEmitter<string> = new EventEmitter<string>();
     @Output() breakpointChange: EventEmitter<number[]> = new EventEmitter<number[]>();
 
-    @ViewChild("editor") private editor: ElementRef;
+    // @ts-ignore
+  @ViewChild("editor") private editor: ElementRef;
     private aceEditor: any = null;
 
     private _breakpoints: number[] = [];
-    private _activeLine: number = null;
+    // @ts-ignore
+  private _activeLine: number  = null;
 
     get breakpoints(): number[]
     {

@@ -6,7 +6,8 @@ export class Compare extends BinaryOperation
 {
     execute(cpu: CPU): number
     {
-        cpu.alu.sub(this.target.getValue(), this.source.getValue());
+        // @ts-ignore
+      cpu.alu.sub(this.target.getValue(), this.source.getValue());
         return cpu.getNextInstruction();
     }
 

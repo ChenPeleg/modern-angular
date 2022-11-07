@@ -21,7 +21,8 @@ export class Xor extends BinaryOperation
 {
     execute(cpu: CPU): number
     {
-        this.target.setValue(cpu.alu.xor(this.target.getValue(), this.source.getValue()));
+        // @ts-ignore
+      this.target.setValue(cpu.alu.xor(this.target.getValue(), this.source.getValue()));
         return cpu.getNextInstruction();
     }
 }

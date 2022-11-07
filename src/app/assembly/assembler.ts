@@ -95,7 +95,7 @@ const InstructionMapping = {
 
 export class AssemblyException extends Error
 {
-    constructor(public message: string = "",
+    constructor(public override message: string = "",
                 public line: number = 0,
                 public data: any = {})
     {
@@ -137,7 +137,7 @@ export class Assembler
         {
             parsedProgram = parser.parse(program);
         }
-        catch (e)
+        catch (e : any)
         {
             throw new AssemblyException(e.message, e.location.start.line);
         }
@@ -223,7 +223,8 @@ export class Assembler
             assemblyData.line = textLines[i].location.start.line - 1;
             try
             {
-                let instruction: EncodedInstruction = this.assembleInstruction(textLines[i].line, assemblyData);
+                // @ts-ignore
+              let instruction: EncodedInstruction = this.assembleInstruction(textLines[i].line, assemblyData);
                 if (instruction !== null)
                 {
                     instructions.push(instruction);
@@ -247,7 +248,7 @@ export class Assembler
         return instructions;
     }
 
-    private assembleInstruction(line: {tag: string, label: any, instruction: any}, assemblyData: AssemblyData): EncodedInstruction
+    private assembleInstruction(line: {tag: string, label: any, instruction: any}, assemblyData: AssemblyData): EncodedInstruction | null
     {
         if (line.label !== null)
         {
@@ -271,7 +272,8 @@ export class Assembler
             throw new AssemblyException("Unknown instruction name " + instruction.name);
         }
 
-        let instructionInstance: Instruction = new InstructionMapping[instruction.name];
+        // @ts-ignore
+      let instructionInstance: Instruction = new InstructionMapping[instruction.name];
         return new EncodedInstruction(
             instructionInstance,
             this.loadParameters(instructionInstance, instruction.operands, instruction.name, assemblyData)
@@ -290,7 +292,7 @@ export class Assembler
 
         this.checkParameterCompatibility(instruction, operands, name);
 
-        let mapping = {};
+        let mapping : any= {};
         mapping[Parameter.Reg] = this.parseRegisterParameter;
         mapping[Parameter.Constant] = this.parseLabelParameter;
         mapping[Parameter.DerefConstant] = this.parseLabelParameter;

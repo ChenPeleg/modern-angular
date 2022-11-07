@@ -4,15 +4,16 @@ import {MemoryView} from "../memory-view";
 
 export class Interrupt extends UnaryReadOperation
 {
-    private number: MemoryView;
+    private number: MemoryView | undefined;
 
     execute(cpu: CPU): number
     {
-        cpu.onInterrupt.emit(this.number.getValue());
+        // @ts-ignore
+      cpu.onInterrupt.emit(this.number.getValue());
         return cpu.getNextInstruction();
     }
 
-    loadParameters(number: MemoryView): void
+  override loadParameters(number: MemoryView): void
     {
         this.number = number;
     }

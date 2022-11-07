@@ -10,7 +10,7 @@ export class Move extends BinaryOperation
         return cpu.getNextInstruction();
     }
 
-    loadParameters(target: MemoryView, source: MemoryView)
+  override loadParameters(target: MemoryView, source: MemoryView)
     {
         this.target = target;
         this.source = source;

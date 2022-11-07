@@ -29,7 +29,7 @@ export class Sub extends BinaryOperation
 }
 export class SubWithBorrow extends Sub
 {
-    execute(cpu: CPU): number
+  override execute(cpu: CPU): number
     {
         this.target.setValue(cpu.alu.sub(this.target.getValue(), this.source.getValue(), cpu.statusWord.carry ? 1 : 0));
         return cpu.getNextInstruction();

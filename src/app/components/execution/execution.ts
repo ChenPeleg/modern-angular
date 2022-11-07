@@ -7,7 +7,8 @@ import {Process} from "../../emulation/process";
 })
 export class ExecutionComponent
 {
-    @Input() process: Process = null;
+    // @ts-ignore
+  @Input() process: Process = null;
 
     @Output() start: EventEmitter<Process> = new EventEmitter<Process>();
     @Output() stop: EventEmitter<Process> = new EventEmitter<Process>();
