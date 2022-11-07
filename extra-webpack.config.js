@@ -94,14 +94,366 @@ module.exports = {
   },
   "module": {
     "rules": [
-
-
-
       {
-        "test": /\.peg$/,
+        "enforce": "pre",
+        "test": /\.js$/,
+        "loader": "source-map-loader",
+        "exclude": [
+          /\/node_modules\//,
+          path.join(__dirname, 'node_modules', '@angular/compiler')
+        ]
+      },
+      {
+        "test": /\.json$/,
+        "loader": "json-loader"
+      },
+      {
+        "test": /\.html$/,
+        "loader": "raw-loader"
+      },
+      {
+        "test": /\.(eot|svg)$/,
+        "loader": "file-loader?name=[name].[hash:20].[ext]"
+      },
+      {
+        "test": /\.(jpg|png|webp|gif|otf|ttf|woff|woff2|cur|ani)$/,
+        "loader": "url-loader?name=[name].[hash:20].[ext]&limit=10000"
+      },
+      {
+        "exclude": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.css$/,
+        "use": [
+          "exports-loader?module.exports.toString()",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          }
+        ]
+      },
+      {
+        "exclude": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.scss$|\.sass$/,
+        "use": [
+          "exports-loader?module.exports.toString()",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "sass-loader",
+            "options": {
+              "sourceMap": false,
+              "precision": 8,
+              "includePaths": []
+            }
+          }
+        ]
+      },
+      {
+        "exclude": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.less$/,
+        "use": [
+          "exports-loader?module.exports.toString()",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "less-loader",
+            "options": {
+              "sourceMap": false
+            }
+          }
+        ]
+      },
+      {
+        "exclude": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.styl$/,
+        "use": [
+          "exports-loader?module.exports.toString()",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "stylus-loader",
+            "options": {
+              "sourceMap": false,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "include": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.css$/,
+        "use": [
+          "style-loader",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          }
+        ]
+      },
+      {
+        "include": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.scss$|\.sass$/,
+        "use": [
+          "style-loader",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "sass-loader",
+            "options": {
+              "sourceMap": false,
+              "precision": 8,
+              "includePaths": []
+            }
+          }
+        ]
+      },
+      {
+        "include": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.less$/,
+        "use": [
+          "style-loader",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "less-loader",
+            "options": {
+              "sourceMap": false
+            }
+          }
+        ]
+      },
+      {
+        "include": [
+          path.join(process.cwd(), "src/styles.less")
+        ],
+        "test": /\.styl$/,
+        "use": [
+          "style-loader",
+          {
+            "loader": "css-loader",
+            "options": {
+              "sourceMap": false,
+              "importLoaders": 1
+            }
+          },
+          {
+            "loader": "postcss-loader",
+            "options": {
+              "ident": "postcss",
+              "plugins": postcssPlugins
+            }
+          },
+          {
+            "loader": "stylus-loader",
+            "options": {
+              "sourceMap": false,
+              "paths": []
+            }
+          }
+        ]
+      },
+      {
+        "test": /\.pegjs$/,
         "loader": "pegjs-loader"
+      },
+      {
+        "test": /\.ts$/,
+        "loader": "@ngtools/webpack"
       }
     ]
   },
-
+  "plugins": [
+    new NoEmitOnErrorsPlugin(),
+    new GlobCopyWebpackPlugin({
+      "patterns": [
+        "assets",
+        "favicon.ico"
+      ],
+      "globOptions": {
+        "cwd": path.join(process.cwd(), "src"),
+        "dot": true,
+        "ignore": "**/.gitkeep"
+      }
+    }),
+    new ProgressPlugin(),
+    new SourceMapDevToolPlugin({
+      "filename": "[file].map[query]",
+      "moduleFilenameTemplate": "[resource-path]",
+      "fallbackModuleFilenameTemplate": "[resource-path]?[hash]",
+      "sourceRoot": "webpack:///"
+    }),
+    new HtmlWebpackPlugin({
+      "template": "./src/index.html",
+      "filename": "./index.html",
+      "hash": false,
+      "inject": true,
+      "compile": true,
+      "favicon": false,
+      "minify": false,
+      "cache": true,
+      "showErrors": true,
+      "chunks": "all",
+      "excludeChunks": [],
+      "title": "Webpack App",
+      "xhtml": true,
+      "chunksSortMode": function sort(left, right) {
+        let leftIndex = entryPoints.indexOf(left.names[0]);
+        let rightindex = entryPoints.indexOf(right.names[0]);
+        if (leftIndex > rightindex) {
+          return 1;
+        }
+        else if (leftIndex < rightindex) {
+          return -1;
+        }
+        else {
+          return 0;
+        }
+      }
+    }),
+    new BaseHrefWebpackPlugin({}),
+    new CommonsChunkPlugin({
+      "minChunks": 2,
+      "async": "common"
+    }),
+    new CommonsChunkPlugin({
+      "name": [
+        "inline"
+      ],
+      "minChunks": null
+    }),
+    new CommonsChunkPlugin({
+      "name": [
+        "vendor"
+      ],
+      "minChunks": (module) => {
+        return module.resource
+          && (module.resource.startsWith(nodeModules)
+            || module.resource.startsWith(genDirNodeModules)
+            || module.resource.startsWith(realNodeModules));
+      },
+      "chunks": [
+        "main"
+      ]
+    }),
+    new NamedModulesPlugin({}),
+    new AotPlugin({
+      "mainPath": "main.ts",
+      "hostReplacementPaths": {
+        "environments/environment.ts": "environments/environment.ts"
+      },
+      "exclude": [],
+      "tsConfigPath": "src/tsconfig.app.json",
+      "skipCodeGeneration": true
+    }),
+    new webpack.DefinePlugin({
+      PRODUCTION: !isDevelopmentMode
+    })
+  ],
+  "node": {
+    "fs": "empty",
+    "global": true,
+    "crypto": "empty",
+    "tls": "empty",
+    "net": "empty",
+    "process": true,
+    "module": false,
+    "clearImmediate": false,
+    "setImmediate": false
+  },
+  "devServer": {
+    "historyApiFallback": true
+  }
 };
