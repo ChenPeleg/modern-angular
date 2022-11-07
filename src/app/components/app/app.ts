@@ -64,6 +64,12 @@ factorial:
 `
         ;
     }
+    public memoryChecked ($event : any) : void {
+      const memory : any = this.runtime.process?.cpu?.memory;
+      if (memory &&  $event?.target?.checked) {
+         memory.ascii = $event?.target?.checked
+      }
+    }
 
      compileSource(source: string)
     {
@@ -151,7 +157,7 @@ factorial:
         }
     }
 
-     getActiveLine(): number | null
+     getActiveLine(): number
     {
         if (this.runtime.hasProcess() && this.runtime.process.isStarted())
         {
@@ -159,7 +165,8 @@ factorial:
         }
         else
         {
-            return null;
+            // @ts-ignore
+          return null;
         }
     }
 }

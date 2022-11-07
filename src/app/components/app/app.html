@@ -19,7 +19,7 @@
   <div class="column">
     <div class="cpu-wrapper">
       <h3>CPU</h3>
-      <cpu [cpu]="runtime.process?.cpu"></cpu>
+      <cpu [cpu]="runtime.process.cpu"></cpu>
     </div>
     <div class="memory-wrapper">
       <h3>Memory</h3>
@@ -30,7 +30,7 @@
             <input type="radio" name="memory-word-size" (click)="memory.wordSize = item"
                    [checked]="item === memory.wordSize"><span>{{item}}</span></label>
         </div>
-        Ascii: <input type="checkbox" [checked]="memory.ascii" (change)="memory.ascii = $event?.target?.checked" />
+        Ascii: <input type="checkbox" [checked]="memory.ascii" (change)="memoryChecked($event) " />
         <memory #memory [memory]="runtime.process?.cpu?.memory"></memory>
       </div>
     </div>
