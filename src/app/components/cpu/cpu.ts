@@ -10,11 +10,11 @@ export class CpuComponent
     // @ts-ignore
   @Input() cpu: CPU = null;
 
-    private getRegisterKeys(): string[]
+  getRegisterKeys(): string[]
     {
         return ["EIP", "EAX", "EBX", "ECX", "EDX", "EBP", "ESP", "ESI", "EDI"];
     }
-    private getFlags(): { name: string, value: boolean }[]
+     getFlags(): { name: string, value: boolean }[]
     {
         return [
             { name: "ZF", value: this.cpu.statusWord.zero },

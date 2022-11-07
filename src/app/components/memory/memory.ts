@@ -11,7 +11,7 @@ export class MemoryComponent
     private _ascii: boolean = false;
 
     // @ts-ignore
-  @Input() memory: MemoryBlock = null;
+  @Input() memory: MemoryBlock | undefined= null;
     @Input() wordSize: number = 1;
     @Input() width: number = 10;
 
@@ -29,21 +29,23 @@ export class MemoryComponent
         return this._ascii;
     }
 
-    private getRowCount(): number
+  public getRowCount(): number
     {
-        return Math.ceil(this.memory.size / this.width / this.wordSize);
+        // @ts-ignore
+      return Math.ceil(this.memory.size / this.width / this.wordSize);
     }
-    private createRange(count: number): number[]
+  public createRange(count: number): number[]
     {
         return _.range(count);
     }
-    private createAddress(row: number, col: number): number
+    public createAddress(row: number, col: number): number
     {
         return row * this.width * this.wordSize + col * this.wordSize;
     }
-    private getCellValue(address: number): string
+  public getCellValue(address: number): string
     {
-        let value: number = this.memory.load(address, this.wordSize).getValue();
+        // @ts-ignore
+      let value: number = this.memory.load(address, this.wordSize).getValue();
 
         if (this._ascii)
         {

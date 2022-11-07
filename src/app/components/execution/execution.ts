@@ -16,27 +16,30 @@ export class ExecutionComponent
     @Output() pause: EventEmitter<Process> = new EventEmitter<Process>();
     @Output() step: EventEmitter<Process> = new EventEmitter<Process>();
 
-    private onStart()
+  onStart()
     {
         this.start.emit(this.process);
         this.process.start();
     }
-    private onStop()
+
+  onStop()
     {
         this.stop.emit(this.process);
         this.process.cpu.halt();
     }
-    private onContinue()
+    public onContinue()
     {
         this.continueEvent.emit(this.process);
         this.process.cpu.run();
     }
-    private onPause()
+
+  onPause()
     {
         this.pause.emit(this.process);
         this.process.cpu.pause();
     }
-    private onStep()
+
+  onStep()
     {
         this.step.emit(this.process);
         this.process.cpu.step();

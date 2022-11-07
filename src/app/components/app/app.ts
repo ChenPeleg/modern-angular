@@ -18,12 +18,12 @@ export class AppComponent implements AfterViewInit
     @ViewChild(AsmEditorComponent) asmEditor: AsmEditorComponent | undefined;
     @ViewChild(ConsoleComponent) console: ConsoleComponent | undefined;
 
-    private runtime: Runtime = new Runtime();
+     runtime: Runtime = new Runtime();
     private assembler: Assembler = new Assembler();
     private cpu: CPU | undefined;
 
     private memorySize: number = 256;
-    private compileErrors: string = "";
+     compileErrors: string = "";
 
     ngAfterViewInit()
     {
@@ -65,7 +65,7 @@ factorial:
         ;
     }
 
-    private compileSource(source: string)
+     compileSource(source: string)
     {
         try
         {
@@ -143,7 +143,7 @@ factorial:
       this.console.print(value);
     }
 
-    private onBreakpointChanged(breakpoints: number[])
+     onBreakpointChanged(breakpoints: number[])
     {
         if (this.runtime.hasProcess())
         {
@@ -151,7 +151,7 @@ factorial:
         }
     }
 
-    private getActiveLine(): number | null
+     getActiveLine(): number | null
     {
         if (this.runtime.hasProcess() && this.runtime.process.isStarted())
         {

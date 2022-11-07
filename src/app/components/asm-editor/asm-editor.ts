@@ -105,7 +105,7 @@ export class AsmEditorComponent implements AfterViewInit
         }
     }
 
-    private emitCompile()
+    public emitCompile()
     {
         this.compile.emit(this.aceEditor.getValue());
     }

@@ -11,7 +11,7 @@ export class RegisterComponent
   @Input() cpu: CPU = null;
     @Input() name: string = "";
 
-    private getValue(): number
+  getValue(): number
     {
         return this.cpu.getRegisterByName(this.name).getValue();
     }

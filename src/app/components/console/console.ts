@@ -6,14 +6,14 @@ import {Component} from "@angular/core";
 })
 export class ConsoleComponent
 {
-    private value: string = "";
+    public value: string = "";
 
     public print(value: string)
     {
         this.value += value;
     }
 
-    private clear()
+     clear()
     {
         this.value = "";
     }
