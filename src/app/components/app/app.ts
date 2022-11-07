@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit
     @ViewChild(AsmEditorComponent) asmEditor: AsmEditorComponent | undefined;
     @ViewChild(ConsoleComponent) console: ConsoleComponent | undefined;
 
-     runtime: Runtime = new Runtime();
+    runtime: Runtime = new Runtime();
     private assembler: Assembler = new Assembler();
     private cpu: CPU | undefined;
 
@@ -81,7 +81,7 @@ factorial:
             this.cpu.onInterrupt.subscribe((interrupt: Interrupt) => this.handleInterrupt(interrupt));
             this.cpu.onError.subscribe((runtimeException: RuntimeException) => alert(runtimeException.message));
             // @ts-ignore
-          this.cpu.breakpoints = this.asmEditor.breakpoints;
+             this.cpu.breakpoints = this.asmEditor.breakpoints;
             this.runtime.process = new Process(this.cpu);
 
             this.compileErrors = "";
