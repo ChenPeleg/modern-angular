@@ -25,6 +25,7 @@ import {LabelResolver} from "./label";
 import {SetDirection, ClearDirection, SetCarry, ClearCarry} from "../emulation/instruction/flags";
 import {Halt} from "../emulation/instruction/halt";
 
+// @ts-ignore
 import parser from "./asm-parser.peg";
 
 const InstructionMapping = {

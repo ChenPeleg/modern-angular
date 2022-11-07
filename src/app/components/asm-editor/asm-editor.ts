@@ -1,8 +1,11 @@
 import {Component, Output, EventEmitter, ViewChild, ElementRef, Input, AfterViewInit} from "@angular/core";
 import * as _ from "lodash";
 import * as ace from "brace";
+import 'brace/ext/language_tools';
 
-ace.config.set("modePath", "./assets/js");
+
+//This is the old code:
+//ace.config.set("modePath", "./assets/js");
 
 @Component({
     selector: "asm-editor",

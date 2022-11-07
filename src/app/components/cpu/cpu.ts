@@ -7,7 +7,8 @@ import {CPU} from "../../emulation/cpu";
 })
 export class CpuComponent
 {
-    @Input() cpu: CPU = null;
+    // @ts-ignore
+  @Input() cpu: CPU = null;
 
     private getRegisterKeys(): string[]
     {
