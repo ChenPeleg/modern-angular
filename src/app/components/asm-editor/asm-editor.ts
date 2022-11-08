@@ -1,15 +1,15 @@
 import {Component, Output, EventEmitter, ViewChild, ElementRef, Input, AfterViewInit} from "@angular/core";
 import * as _ from "lodash";
 import * as ace from "brace";
-import 'brace/ext/language_tools';
 
 
-//This is the old code:
-//ace.config.set("modePath", "./assets/js");
+ // @ts-ignore
+ace.config.set("modePath", "./assets/js");
 
 @Component({
     selector: "asm-editor",
-    templateUrl: "./asm-editor.html"
+    templateUrl: "./asm-editor.html",
+  styleUrls :  ["./asm-editor.scss"]
 })
 export class AsmEditorComponent implements AfterViewInit
 {
@@ -62,7 +62,7 @@ export class AsmEditorComponent implements AfterViewInit
     {
         const el = this.editor.nativeElement;
         this.aceEditor = ace.edit(el);
-        this.aceEditor.session.setMode("ace/mode/assembly_x86");
+          this.aceEditor.session.setMode("ace/mode/assembly_x86");
         this.aceEditor.on("guttermousedown", (e: any) =>
         {
             let target = e.domEvent.target;
