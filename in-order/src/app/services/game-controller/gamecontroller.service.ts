@@ -74,7 +74,7 @@ export class GamecontrollerService {
 
   private arrayRandom(arr: Array<string>): string {
     const randomElement = (): string => arr[Math.floor(Math.random() * arr.length)];
-    let feedBack: string;
+    let feedBack: string ='';
     for (let i: number = 0; i < 4; i++) {
       feedBack = randomElement();
       if (feedBack !== this.feedbackHistory[this.questionNum + 1]) { break; }
