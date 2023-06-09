@@ -10,7 +10,7 @@ export const allGameData = {
     "1": {
       "text": "   IN-ORDER!   \n\n use the laser to Shoot the asteroid with \n the right answer to win!",
       "answers": [
-        "GO!"
+        "GOT IT!"
       ]
     },
     "2": {

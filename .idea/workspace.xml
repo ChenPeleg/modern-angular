@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="all works well 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in-order/src/app/big-message/big-message.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/big-message/big-message.component.scss" afterDir="false" />
+    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="lowered feedback message">
       <change beforePath="$PROJECT_DIR$/in-order/src/app/data/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/data/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in-order/src/app/question/question.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/question/question.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,7 @@
       <updated>1686298935717</updated>
       <workItem from="1686298936733" duration="665000" />
       <workItem from="1686299653335" duration="2837000" />
-      <workItem from="1686309724418" duration="482000" />
+      <workItem from="1686309724418" duration="552000" />
     </task>
     <task id="LOCAL‎-00001" summary="added new angular app">
       <created>1686299521826</created>
@@ -140,7 +137,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686309794381</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="lowered feedback message">
+      <created>1686310227729</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686310227729</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +161,7 @@
     <MESSAGE value="fixing more errors 2" />
     <MESSAGE value="all works well" />
     <MESSAGE value="all works well 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="all works well 2" />
+    <MESSAGE value="lowered feedback message" />
+    <option name="LAST_COMMIT_MESSAGE" value="lowered feedback message" />
   </component>
 </project>
