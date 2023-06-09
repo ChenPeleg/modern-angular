@@ -14,6 +14,7 @@ import {SummaryComponent} from './summary/summary.component';
 import {SpreadPipe} from './summary/spread.pipe';
 import {TopBarComponent} from './top-bar/top-bar.component';
 import {SoundBtnComponent} from './top-bar/sound-btn/sound-btn.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
             declarations: [
@@ -32,6 +33,7 @@ import {SoundBtnComponent} from './top-bar/sound-btn/sound-btn.component';
               SoundBtnComponent
             ],
             imports: [
+              HttpClientModule,
               BrowserModule
             ],
             providers: [GamecontrollerService],

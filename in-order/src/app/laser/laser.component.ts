@@ -8,7 +8,9 @@ import {Laser} from '../models/laser.model';
            })
 export class LaserComponent implements OnInit {
 
+  // @ts-ignore
   @Input() laserData: Laser;
+
 
   constructor() {
 

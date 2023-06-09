@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="fixed all ts errors 2">
-      <change afterPath="$PROJECT_DIR$/in-order/src/app/utils/observableToPromise.ts" afterDir="false" />
+    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="fixing more errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in-order/src/app/asteroid/asteroid.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/asteroid/asteroid.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in-order/src/app/game/game.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/game/game.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/in-order/src/app/services/game-controller/gamecontroller.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/services/game-controller/gamecontroller.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/big-message/big-message.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/big-message/big-message.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/laser/laser.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/laser/laser.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/question/question.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/question/question.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/top-bar/sound-btn/sound-btn.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/top-bar/sound-btn/sound-btn.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686298935717</updated>
       <workItem from="1686298936733" duration="665000" />
-      <workItem from="1686299653335" duration="1775000" />
+      <workItem from="1686299653335" duration="2500000" />
     </task>
     <task id="LOCAL‎-00001" summary="added new angular app">
       <created>1686299521826</created>
@@ -114,7 +115,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686300573782</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎-00006" summary="fixing more errors">
+      <created>1686301498730</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686301498730</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +135,7 @@
     <MESSAGE value="added all the files from the app" />
     <MESSAGE value="fixed all ts errors" />
     <MESSAGE value="fixed all ts errors 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all ts errors 2" />
+    <MESSAGE value="fixing more errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing more errors" />
   </component>
 </project>
