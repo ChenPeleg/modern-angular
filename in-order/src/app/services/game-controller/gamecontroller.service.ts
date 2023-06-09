@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {observableToPromise} from "../../utils/observableToPromise";
+import {allGameData} from "../../data/data";
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,10 @@ export class GamecontrollerService {
   private jsonUrl: string = 'assets/questions.json';
 
   constructor(private http: HttpClient) {
+    this.data = allGameData;
     this.questionNum = 1, this.successArray = [], this.feedbackHistory = [];
     this.soundOn = true;
-    this.initGame().then()
+    // this.initGame().then()
   }
 
   setNextQuestion(mistakes: number): boolean {
