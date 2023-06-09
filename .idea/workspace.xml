@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="fixed all ts errors">
+    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="fixed all ts errors 2">
+      <change afterPath="$PROJECT_DIR$/in-order/src/app/utils/observableToPromise.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/asteroid/asteroid.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/asteroid/asteroid.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/game/game.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/game/game.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/in-order/src/app/services/game-controller/gamecontroller.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/services/game-controller/gamecontroller.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686298935717</updated>
       <workItem from="1686298936733" duration="665000" />
-      <workItem from="1686299653335" duration="897000" />
+      <workItem from="1686299653335" duration="1775000" />
     </task>
     <task id="LOCAL‎-00001" summary="added new angular app">
       <created>1686299521826</created>
@@ -102,7 +107,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686300545519</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="fixed all ts errors 2">
+      <created>1686300573782</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686300573782</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +126,7 @@
     <MESSAGE value="added ide files" />
     <MESSAGE value="added all the files from the app" />
     <MESSAGE value="fixed all ts errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all ts errors" />
+    <MESSAGE value="fixed all ts errors 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all ts errors 2" />
   </component>
 </project>

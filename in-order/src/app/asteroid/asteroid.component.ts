@@ -11,12 +11,14 @@ export class AsteroidComponent implements OnInit {
   @Output() clickAstro = new EventEmitter<{ index: number }>();
   @Output() hoverAstro = new EventEmitter<{ isOn: boolean }>();
 
-  @Input() astData: Asteroid;
+
+  // @ts-ignore
+  @Input({required : true}) astData: Asteroid;
   astSrc: Array<string>;
-  imageSrc: string;
-  isReversed: boolean;
+  imageSrc: string = "";
+  isReversed: boolean = false;
   isPoped: boolean;
-  rotationSpeed: string;
+  rotationSpeed: string = '1';
   public readonly showDelay: number = 150;
 
   constructor() {
@@ -82,7 +84,7 @@ export class AsteroidComponent implements OnInit {
     this.imageSrc = this.getImg();
     this.isReversed = this.getRotationDir();
     this.rotationSpeed = this.getRotationspeed();
-    setTimeout(() => { this.isPoped = true; }, (this.astData.order * this.showDelay));
+    setTimeout(() => { this.isPoped = true; }, ((this.astData?.order || 1) * this.showDelay));
   }
 
 }

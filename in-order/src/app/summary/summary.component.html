@@ -2,7 +2,7 @@
 
   <div class="summary">
     <h2 class="head">Game summary</h2>
-    <div class="text">{{ summup?.text ? (summup.text | spread) : ""}}
+    <div class="text">{{ (summup?.text ? summup.text : [""]) | spread }}
     </div>
 
   </div>

@@ -18,9 +18,9 @@ import {SoundEffectService} from '../services/soundEffect/sound-effect.service';
            })
 export class GameComponent implements OnInit {
 
-  asteroids: Asteroid[];
+  asteroids: Asteroid[] = [];
   questionNumber: number;
-  currentQuestionText: string;
+  currentQuestionText: string= '';
   nextCorrect: number;
   feedbackMsg: string;
   displayBigMessage: boolean;
@@ -108,7 +108,7 @@ export class GameComponent implements OnInit {
     const popOrder = answers.map((n: any): number[] => answers.indexOf(n)).sort(
       () => Math.random() - 0.5);
 
-    const asteroidArray: Array<Asteroid> = answers.map(n => {
+    const asteroidArray: Array<Asteroid> = answers.map((n : any) => {
       return {
         left: reorderedPositions[answers.indexOf(n)].x,
         bottom: reorderedPositions[answers.indexOf(n)].y,
