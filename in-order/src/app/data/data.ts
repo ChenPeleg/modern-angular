@@ -8,12 +8,9 @@ export const allGameData = {
   "questions": {
 
     "1": {
-      "text": "1. Click from big to small",
+      "text": "   IN-ORDER!   \n\n use the laser to Shoot the asteroid with \n the right answer to win!",
       "answers": [
-        "lion",
-        "dog",
-        "cat",
-        "ant"
+        "GO!"
       ]
     },
     "2": {
