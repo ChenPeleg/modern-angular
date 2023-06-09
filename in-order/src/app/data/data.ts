@@ -2,9 +2,11 @@ export const allGameData = {
   "meta": {
     "name": "English Sentences",
     "id": "abc123",
-    "baseUrl": "ans/"
+    "baseUrl": "ans/",
+    "instructions" : true
   },
   "questions": {
+
     "1": {
       "text": "1. Click from big to small",
       "answers": [
@@ -15,7 +17,7 @@ export const allGameData = {
       ]
     },
     "2": {
-      "text": "2. Click from lagrge to little",
+      "text": "2. Click from large to little",
       "answers": [
         "tiger",
         "cat",
