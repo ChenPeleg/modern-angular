@@ -1,0 +1,39 @@
+<div class="summary-wrappeer">
+
+  <div class="summary">
+    <h2 class="head">Game summary</h2>
+    <div class="text">{{summup.text | spread}}
+    </div>
+
+  </div>
+  <div>
+    <table class="summary summary-table ">
+      <thead>
+      <tr>
+        <th>type of answer</th>
+        <th>in numbers</th>
+        <th>in precent</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>without errors</td>
+        <td>{{summup.q0}}</td>
+        <td>{{summup.p0}}%</td>
+
+      </tr>
+      <tr>
+        <td>one mistakes</td>
+        <td>{{summup.q1}}</td>
+        <td>{{summup.p1}}%</td>
+      </tr>
+      <tr>
+        <td>two or more mistakes</td>
+        <td>{{summup.q23}}</td>
+        <td>{{summup.p23}}%</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button (click)="onClickReplay()" class=" summary replay-btn">Replay</button>
+</div>

@@ -1,0 +1,67 @@
+$laserCol1: rgba(250, 2, 2, 0.9);
+$laserCol2: rgba(156, 0, 0, 0.9);
+$laserCol3: rgba(247, 1, 1, 0.9);
+.laser-Container {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  padding-top: 10px;
+  background-color: red;
+  background: rgb(173, 16, 16);
+
+  box-shadow: -1px 0px 2px 2px rgba(245, 84, 84, 0.5), 1px 0px 2px 2px rgba(245, 84, 84, 0.5);
+  width: 8px;
+  height: 1000px;
+  z-index: 201;
+  border-radius: 70% 70% 10px 10px;
+
+  transform: rotate(10deg);
+  transform-origin: top left;
+
+  animation: laserflow 0.15s infinite ease-in-out;
+
+  transition: opacity 0.1s ease-in-out;
+
+  opacity: 0.3;
+  display: none;
+}
+
+@keyframes laserflow {
+  0% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 10%, $laserCol3 100%);
+  }
+  20% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 20%, $laserCol3 100%);
+  }
+  40% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 40%, $laserCol3 100%);
+  }
+  60% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 60%, $laserCol3 100%);
+  }
+  80% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 80%, $laserCol3 100%);
+  }
+  100% {
+    background: radial-gradient(circle, $laserCol1 0%, $laserCol2 90%, $laserCol3 100%);
+  }
+}
+
+.show {
+  display: inline;
+}
+
+.laser-drop {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: -200%;
+  top: 0%;
+  border-radius: 50% 50%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(241, 140, 140, 0.6) 90%, rgba(255, 0, 0, 0.6) 100%);
+  z-index: 200;
+}
+
+.fireing {
+  opacity: 1;
+}

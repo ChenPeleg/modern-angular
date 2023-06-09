@@ -1,0 +1,9 @@
+<div (click)="onClickAsteroid()" (mouseout)="mouseExitAsteroid($event)" (mouseover)="mouseEnterAsteroid($event)"
+     [ngClass]="{popasteroid: isPoped}"
+     [ngStyle]="{left: getLeft(), bottom:getBottom(),display: astData.removed ? 'none' : 'inline-block'}" class="asteroidWrapper">
+  <img [ngClass]="{reversspin  : isReversed}" [ngClass]="{explode:astData.explode,destroyed:astData.destroy,warm: astData.warm}" [src]="imageSrc"
+       [style.animation-duration]="rotationSpeed" alt="asteroid" class="asteroidImage spin"
+       draggable="false">
+  <div [ngClass]="{explode:astData.explode}" class="asteroid-text">{{astData.text}}</div>
+  <app-explotion *ngIf="astData.explode"></app-explotion>
+</div>

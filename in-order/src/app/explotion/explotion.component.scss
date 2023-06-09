@@ -1,0 +1,63 @@
+@import "../asteroid/asteroid.component.scss";
+
+.explotionWrapper {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: 5;
+  color: wheat;
+}
+
+
+$boxes: 100;
+$size: $astroidSize * 2;
+
+body {
+  background-color: black;
+}
+
+.wrap {
+  position: absolute;
+  width: $size + px;
+  height: $size + px;
+
+  margin: auto;
+}
+
+div.box {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+@for $i from 1 through $boxes {
+  @keyframes anim-#{$i} {
+    0% {
+      top: 50%;
+      left: 50%;
+      opacity: 5;
+    }
+    // 70%{
+    //     opacity: 0.5;
+    //   }
+    100% {
+      top: random($size)+px;
+      left: random($size)+px;
+      opacity: 0;
+    }
+
+  }
+
+  div.box {
+    &:nth-child(#{$i}) {
+      left: $i * 10px;
+      animation-duration: 1s;
+      animation-name: anim-#{$i};
+      animation-iteration-count: 1;
+      animation-timing-function: cubic-bezier(.03, .93, .04, .93);
+      animation-fill-mode: forwards;
+      background: hsla(10 *  $i, 100%, 90%, 1);
+    }
+  }
+}

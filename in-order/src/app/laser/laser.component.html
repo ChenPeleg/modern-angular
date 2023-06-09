@@ -1,0 +1,5 @@
+<div [ngClass]="{show:laserData.showLaser ||laserData.laserFiring, fireing: laserData.laserFiring}"
+     [ngStyle]="{left: laserData.laserX + 'px', top:laserData.laserY + 'px' , transform: 'rotate('+ laserData.laserAngle + 'deg)'}"
+     class="laser-Container">
+
+</div>
