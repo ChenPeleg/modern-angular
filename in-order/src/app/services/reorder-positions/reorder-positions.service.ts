@@ -9,8 +9,8 @@ interface Asteroids extends Array<Asteroid> {}
             })
 
 export class ReorderPositionsService {
-  positions: Array<AsteroidPosition>;
-  asteroids: Asteroids;
+  // positions: Array<AsteroidPosition>;
+  // asteroids: Asteroids;
 
   constructor() { }
 
@@ -23,6 +23,7 @@ export class ReorderPositionsService {
         }
         return true;
       }
+      return true;
     };
     const newAnswersObject: Array<AsteroidPosition> = [...unordered];
     newAnswersObject.sort(() => Math.random() - 0.5);

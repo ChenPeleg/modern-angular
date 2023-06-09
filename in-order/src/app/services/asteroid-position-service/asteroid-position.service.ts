@@ -5,7 +5,9 @@ import {AsteroidPosition} from '../../models/asteroidPosition.model';
               providedIn: 'root'
             })
 export class AsteroidPositionService {
-  position: AsteroidPosition;
+
+  // @ts-ignore
+  position: AsteroidPosition ;
 
   constructor() {
 

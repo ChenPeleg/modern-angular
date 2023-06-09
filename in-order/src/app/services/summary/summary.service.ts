@@ -50,18 +50,21 @@ export class SummaryService {
     else {
       const min = Math.min(...values.filter((el) => el > 0));
       for (const k of Object.keys(mObj)) {
-        if (mObj[k] === min) {
-          mObj[k] = mObj[k] + 1;
+        const keyK = k as keyof SuccesByPrecent
+
+        if (mObj[keyK] === min) {
+          mObj[keyK] = mObj[keyK] + 1;
           return this.roundTo100(mObj);
         }
       }
     }
+    return mObj
   }
 
 
   verbalAssesment(result: SuccesByPrecent): string {
 
-    let grade: string;
+    let grade: string = 'D';
     if (result.p0 > 75) {
       grade = 'A';
     }

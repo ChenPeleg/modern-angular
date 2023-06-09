@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="added ide files">
+    <list default="true" id="481ae519-f758-475d-b5d9-e23438aa5f25" name="Changes" comment="added all the files from the app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/services/asteroid-position-service/asteroid-position.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/services/asteroid-position-service/asteroid-position.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/services/reorder-positions/reorder-positions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/services/reorder-positions/reorder-positions.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/services/summary/summary.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/services/summary/summary.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/src/app/summary/summary.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/in-order/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/in-order/tsconfig.app.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +48,27 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Projects\\modern-angular\\in-order\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/in-order/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686298935717</updated>
       <workItem from="1686298936733" duration="665000" />
+      <workItem from="1686299653335" duration="861000" />
     </task>
     <task id="LOCAL‎-00001" summary="added new angular app">
       <created>1686299521826</created>
@@ -69,7 +94,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686299543109</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="added all the files from the app">
+      <created>1686299690905</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686299690905</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,6 +111,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="added new angular app" />
     <MESSAGE value="added ide files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ide files" />
+    <MESSAGE value="added all the files from the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all the files from the app" />
   </component>
 </project>
